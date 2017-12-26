@@ -13,9 +13,9 @@ Pure JavaScript,and easy to use.
 
 ```javascript
 <AutoResizeHeightWebView
-                style={{backgroundColor:'white}}   //webviewStyle
-                AnimationDuration={500} //animation duration
-                source={{uri: 'http://www.ftchinese.com/story/001075607'}}/>  // just like ReactNative's Webview
+                style={{backgroundColor:'white}}   {/*webviewStyle*/}
+                AnimationDuration={500}  {/*animation duration*/}
+                source={{uri: 'http://www.ftchinese.com/story/001075607'}}/> {/*just like ReactNative's Webview*/}
 ```
 
-HaveFun!
+If it helps you,please give  it a star!
