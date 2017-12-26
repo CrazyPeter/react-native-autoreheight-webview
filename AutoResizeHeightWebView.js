@@ -22,8 +22,7 @@ const patchPostMessageJsCode = `
         })})();
 `;
 
-
-class AutoResizeWebView extends React.Component {
+class AutoResizeHeightWebView extends React.Component {
 
     static defaultProps = {
         needAnimate : true,
@@ -114,4 +113,4 @@ const styles = StyleSheet.create({
 
 });
 
-module.exports = AutoResizeWebView;
+module.exports = AutoResizeHeightWebView;

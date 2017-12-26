@@ -1,7 +1,7 @@
 'use strict';
 
 import React, {Component} from 'react';
-import AutoResizeWebView from './AutoResizeWebView';
+import AutoResizeHeightWebView from './AutoResizeHeightWebView';
 import {
     ScrollView,
     StyleSheet, Text, TouchableOpacity,
@@ -22,7 +22,7 @@ class Example extends Component {
 
     renderWebView(){
         return (
-            <AutoResizeWebView
+            <AutoResizeHeightWebView
                 AnimationDuration={500}
                 source={{uri: 'http://www.ftchinese.com/story/001075607'}}/>)
     };
