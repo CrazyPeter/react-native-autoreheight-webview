@@ -1,21 +1,28 @@
 # react-native-autoreheight-webview
 
-An auto resize content height webview for React Native.
-Pure JavaScript,and easy to use.
+An auto resize content height webview for React Native.  <br>
+Pure JavaScript,and easy to use.  <br>
+
 
 ## install
-`` (rn >= 0.44)
+`asdf` (rn >= 0.44)
 
 ## showcase
 ![showtime](http://ww3.sinaimg.cn/large/0060lm7Tly1fmtyjygctag30750dwtku.gif)
 
-# usage
+## usage
 
 ```javascript
 <AutoResizeHeightWebView
-                style={{backgroundColor:'white}}   {/*webviewStyle*/}
-                AnimationDuration={500}  {/*animation duration*/}
-                source={{uri: 'http://www.ftchinese.com/story/001075607'}}/> {/*just like ReactNative's Webview*/}
+                /*webviewStyle*/
+                style={{backgroundColor:'white}}   
+                /*animation duration*/
+                AnimationDuration={500} 
+                /*just like ReactNative's Webview*/
+                source={{uri: 'http://www.ftchinese.com/story/001075607'}}/> 
 ```
 
-If it helps you,please give  it a star!
+<br>
+If it helps you,please give it a star!
+
+###Feel free to add issues or feature requests
