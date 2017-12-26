@@ -15,7 +15,7 @@ Pure JavaScript,and easy to use.  <br>
 ```javascript
 <AutoResizeHeightWebView
                 /*webviewStyle*/
-                style={{backgroundColor:'white}}   
+                style={{backgroundColor:'white'}}   
                 /*animation duration*/
                 AnimationDuration={500} 
                 /*just like ReactNative's Webview*/
@@ -25,4 +25,4 @@ Pure JavaScript,and easy to use.  <br>
 <br>
 If it helps you,please give it a star!
 
-###Feel free to add issues or feature requests
+### Feel free to add issues or feature requests
