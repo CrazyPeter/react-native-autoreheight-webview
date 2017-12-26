@@ -5,7 +5,12 @@ Pure JavaScript,and easy to use.  <br>
 
 
 ## install
-`asdf` (rn >= 0.44)
+```c
+yarn add react-native-autoreheight-webview 
+or
+npm install react-native-autoreheight-webview 
+(rn >= 0.44)
+```
 
 ## showcase
 ![showtime](http://ww3.sinaimg.cn/large/0060lm7Tly1fmtyjygctag30750dwtku.gif)
