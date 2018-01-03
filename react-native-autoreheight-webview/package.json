@@ -1,11 +1,11 @@
 {
   "name": "react-native-autoreheight-webview",
-  "version": "0.1.0",
-  "description":"An auto resize content height webview for React Native. Pure JavaScript,and easytouse.",
-  "author":{
-    "name":"CrazyPeter",
-    "email":"k9629@qq.com",
-    "url":"https://github.com/CrazyPeter/react-native-autoreheight-webview"
+  "version": "0.3.0",
+  "description": "An auto resize content height webview for React Native. Pure JavaScript,and easytouse.",
+  "author": {
+    "name": "CrazyPeter",
+    "email": "k9629@qq.com",
+    "url": "https://github.com/CrazyPeter/react-native-autoreheight-webview"
   },
   "scripts": {},
   "keywords": [
@@ -20,7 +20,8 @@
   "bugs": {
     "url": "https://github.com/CrazyPeter/react-native-autoreheight-webview/issues"
   },
+  "homepage": "https://github.com/CrazyPeter/react-native-autoreheight-webview#readme",
   "license": "MIT",
-  "main":"AutoResizeHeightWebView.js",
+  "main": "AutoResizeHeightWebView.js",
   "repository": "https://github.com/CrazyPeter/react-native-autoreheight-webview"
 }

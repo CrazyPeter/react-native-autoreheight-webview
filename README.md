@@ -1,3 +1,6 @@
+[![Version](http://img.shields.io/npm/v/react-native-autoreheight-webview.svg?style=flat-square)](https://npmjs.org/package/aframe-forcegraph-component)
+[![License](http://img.shields.io/npm/l/react-native-autoreheight-webview.svg?style=flat-square)](https://npmjs.org/package/aframe-forcegraph-component)
+
 # react-native-autoreheight-webview
 
 An auto resize content height webview for React Native.  <br>
