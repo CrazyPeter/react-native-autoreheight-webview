@@ -8,6 +8,8 @@ import React, { Component } from 'react';
 import { StackNavigator }  from  'react-navigation';
 
 import Example from './Example';
+import Example2 from './Example2';
+
 import {
     StyleSheet,
     Text, TouchableOpacity,
@@ -22,10 +24,17 @@ class App extends Component<> {
                     Welcome to AutoResizeWebView!
                 </Text>
                 <TouchableOpacity onPress={() => {
-                    this.props.navigation.navigate('Example',{type:0});
+                    this.props.navigation.navigate('Example');
                 }}>
                     <Text style={styles.instructions}>
-                        Click Me And See
+                        Basic ResizeHeight
+                    </Text>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={() => {
+                    this.props.navigation.navigate('Example2');
+                }}>
+                    <Text style={styles.instructions}>
+                        Manual ResizeHeight
                     </Text>
                 </TouchableOpacity>
             </View>
@@ -40,13 +49,14 @@ let navigat = StackNavigator({
     },
     Example:{
         screen: Example
+    },
+    Example2:{
+        screen: Example2
     }
 });
 
 
 module.exports = navigat;
-
-
 
 const styles = StyleSheet.create({
   container: {

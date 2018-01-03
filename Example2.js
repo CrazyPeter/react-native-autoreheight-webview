@@ -1,3 +1,7 @@
+/**
+ * Created by PeterKong on 2018/1/3.
+ */
+
 'use strict';
 
 import React, {Component} from 'react';
@@ -25,34 +29,34 @@ const htmlString = `管理不是晋升，放弃管理也并不是去放弃什么
 你一次只能提升一样：工程或是管理二选一。如果你是一名经理，那你的工作就是让自己的管理水平越来越高。不要试图抓着以前在工程职位时的荣耀不放。管理是一项会被不断打扰的工作，而优秀的工程师工作则需要屏蔽外界的干扰，所以你无法同时去做这两件截然对立的事情。作为一名管理人员，你的工作是让团队成员随时能够找到自己，随时接受打扰。你的工作是选择分配具有挑战性的任务，以便你们团队的工程师可以在工程技能方面得到提升。`
 
 
-class Example extends Component {
-
-    //0 - default animate
-    //1 - click more
-
-    static defaultProps = {
-        type: 0
-    };
+class Example2 extends Component {
 
     constructor(props) {
-      super(props);
-      this.state = {
-
-      };
+        super(props);
+        this.state = {
+            showmore: false
+        };
     }
 
     render() {
         return (
             <ScrollView style={{backgroundColor: 'white', flex: 1}}>
-                <Text style={styles.instructions}>
-                    Top
-                </Text>
                 <AutoResizeHeightWebView
-                    AnimationDuration={500}
+                    ref={e => this.webv = e}
+                    defaultHeight={200}
+                    needAnimate={true}
+                    needAutoResetHeight={false}
                     source={{html: htmlString}}/>
-                <Text style={styles.instructions}>
-                    Bottom
-                </Text>
+                <TouchableOpacity style={{marginTop:-50}} onPress={() => {
+                    this.state.showmore ? this.webv.resetSmallHeight() :  this.webv.resetHeight();
+                    this.setState({
+                        showmore : !this.state.showmore
+                    })
+                }}>
+                    <Text style={styles.button}>
+                        {this.state.showmore ? "close it" : "Read More"}
+                    </Text>
+                </TouchableOpacity>
             </ScrollView>
         );
     }
@@ -78,8 +82,9 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         color: '#333333',
         marginBottom: 5,
+        opacity:0.8
     }
 });
 
 
-export default Example;
+export default Example2;

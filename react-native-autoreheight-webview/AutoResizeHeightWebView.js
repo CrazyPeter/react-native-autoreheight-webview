@@ -27,7 +27,8 @@ class AutoResizeHeightWebView extends React.Component {
     static defaultProps = {
         needAnimate : true,
         AnimationDuration : 500,
-        defaultHeight : 100
+        defaultHeight : 100,
+        needAutoResetHeight : true
     };
 
     constructor(props) {
@@ -36,7 +37,7 @@ class AutoResizeHeightWebView extends React.Component {
             height: props.defaultHeight,
             source: props.source,
         };
-        this._animatedValue = new Animated.Value(0);
+        this._animatedValue = new Animated.Value(1);
     }
     
     componentWillReceiveProps(nextProps) {
@@ -49,6 +50,7 @@ class AutoResizeHeightWebView extends React.Component {
     }
 
     gotoShow(){
+        if(this.props.needAnimate) this._animatedValue.setValue(0);
         Animated.timing(this._animatedValue, {
             toValue: 1,
             duration: this.props.AnimationDuration
@@ -63,33 +65,45 @@ class AutoResizeHeightWebView extends React.Component {
 
         setTimeout(() => {
             this.webview && this.webview.injectJavaScript(jsstr);
-            this.props.needAnimate ? this.gotoShow() : null;
         }, 500);
     }
 
     getMessageFromWebView(event){
-        console.log("getMessageFromWebView");
-        console.log(event);
-
-        //autoResize
-        let resetHeight = (message)=>{
-            let height = message.substr(7);
-            this.setState({
-                height:(parseInt(height))
-            })
-        };
-
+        // console.log("getMessageFromWebView");
+        // console.log(event);
         let message = event.nativeEvent.data;
-
         if(message.indexOf('height') === 0){
-            resetHeight(message);
+            if(this.heightMessage === undefined || this.heightMessage === null || this.heightMessage === ""){
+                this.heightMessage = message;
+                if(this.props.needAutoResetHeight) {
+                    this.resetHeight();
+                }
+            }
         }
+    }
 
+    resetHeight(){
+        if(this.heightMessage === undefined || this.heightMessage === null || this.heightMessage === ""){
+            return;
+        }
+        let message = this.heightMessage;
+        let height = message.substr(7);
+        this.setState({
+            height:(parseInt(height))
+        });
+        this.gotoShow();
+    }
+
+    resetSmallHeight(){
+        this.setState({
+            height:this.props.defaultHeight
+        });
+        this.gotoShow();
     }
 
     render(){
         return (
-            <Animated.View style={{height:this.state.height,opacity: this.props.needAnimate ? this._animatedValue : 1}}>
+            <Animated.View style={{height:this.state.height,opacity:this._animatedValue}}>
                 <WebView ref={e => this.webview=e}
                          source={this.state.source}
                          bounces={true}
