@@ -79,6 +79,8 @@ class AutoResizeHeightWebView extends React.Component {
                     this.resetHeight();
                 }
             }
+        }else if(this.props.onMessage !== undefined){
+            this.props.onMessage(event);
         }
     }
 
@@ -102,20 +104,25 @@ class AutoResizeHeightWebView extends React.Component {
     }
 
     render(){
+
+        let {bounces , onLoadEnd , style , scrollEnabled , automaticallyAdjustContentInsets , scalesPageToFit , onMessage ,...otherprops } = this.props;
         return (
             <Animated.View style={{height:this.state.height,opacity:this._animatedValue}}>
-                <WebView ref={e => this.webview=e}
+                <WebView
+                    {...otherprops}
+                    ref={e => this.webview=e}
                          source={this.state.source}
-                         bounces={true}
+                         bounces={bounces !== undefined ? bounces : true}
                          javaScriptEnabled
                          injectedJavaScript={patchPostMessageJsCode}
                          onLoadEnd={()=>{
                              this.WebViewResetHeightFunctionJSInsert();
+                             onLoadEnd !== undefined ? onLoadEnd() : null;
                          }}
-                         style={[{width:width,height:this.state.height},this.props.style]}
-                         scrollEnabled={false}
-                         automaticallyAdjustContentInsets={true}
-                         scalesPageToFit={true}
+                         style={[{width:width,height:this.state.height},style !== undefined ? style : {}]}
+                         scrollEnabled={scrollEnabled !== undefined ? scrollEnabled : false}
+                         automaticallyAdjustContentInsets={automaticallyAdjustContentInsets !== undefined ? automaticallyAdjustContentInsets : true}
+                         scalesPageToFit={scalesPageToFit !== undefined ? scalesPageToFit : true}
                          onMessage={this.getMessageFromWebView.bind(this)}>
                 </WebView>
             </Animated.View>
