@@ -5,9 +5,6 @@
 import React, { Component } from 'react';
 import {StyleSheet, View, WebView , Animated} from 'react-native';
 
-let Dimensions = require('Dimensions');
-let {width, height} = Dimensions.get('window');
-
 //modify webview error:  https://github.com/facebook/react-native/issues/10865
 const patchPostMessageJsCode = `
         (${String(function() {
@@ -119,7 +116,7 @@ class AutoResizeHeightWebView extends React.Component {
                              this.WebViewResetHeightFunctionJSInsert();
                              onLoadEnd !== undefined ? onLoadEnd() : null;
                          }}
-                         style={[{width:width,height:this.state.height},style !== undefined ? style : {}]}
+                         style={[{height:this.state.height},style !== undefined ? style : {}]}
                          scrollEnabled={scrollEnabled !== undefined ? scrollEnabled : false}
                          automaticallyAdjustContentInsets={automaticallyAdjustContentInsets !== undefined ? automaticallyAdjustContentInsets : true}
                          scalesPageToFit={scalesPageToFit !== undefined ? scalesPageToFit : true}

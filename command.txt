@@ -1,0 +1,4 @@
+npm login
+npm who am i
+npm version patch/minor/major -m "<info>"
+npm publish

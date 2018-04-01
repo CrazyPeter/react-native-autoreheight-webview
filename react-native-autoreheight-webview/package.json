@@ -1,6 +1,6 @@
 {
   "name": "react-native-autoreheight-webview",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "An auto resize content height webview for React Native. Pure JavaScript,and easytouse.",
   "author": {
     "name": "CrazyPeter",
