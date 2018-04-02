@@ -44,6 +44,7 @@ class Example2 extends Component {
                 <AutoResizeHeightWebView
                     ref={e => this.webv = e}
                     defaultHeight={200}
+                    style={{backgroundColor:'white',width:300}}
                     needAnimate={true}
                     needAutoResetHeight={false}
                     source={{html: htmlString}}/>

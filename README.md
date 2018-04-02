@@ -31,7 +31,7 @@ see more in [Example2.js](https://github.com/CrazyPeter/react-native-autoreheigh
 ```javascript
 <AutoResizeHeightWebView
                 defaultHeight={200}
-                style={{backgroundColor:'white'}}
+                style={{backgroundColor:'white',width:300}}
                 AnimationDuration={500} 
                 source={{uri: 'http://www.ftchinese.com/story/001075607'}}/> 
 ```

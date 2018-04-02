@@ -49,6 +49,7 @@ class Example extends Component {
                 </Text>
                 <AutoResizeHeightWebView
                     AnimationDuration={500}
+                	style={{backgroundColor:'white',width:300}}
                     source={{html: htmlString}}/>
                 <Text style={styles.instructions}>
                     Bottom
