@@ -3,7 +3,8 @@
  */
 
 import React, { Component } from 'react';
-import {StyleSheet, View, WebView , Animated} from 'react-native';
+import {StyleSheet, View , Animated} from 'react-native';
+import {WebView} from "react-native-webview";
 
 //modify webview error:  https://github.com/facebook/react-native/issues/10865
 const patchPostMessageJsCode = `
