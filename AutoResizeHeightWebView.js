@@ -106,7 +106,7 @@ class AutoResizeHeightWebView extends React.Component {
 
     render(){
 
-        let {bounces , onLoadEnd , style , scrollEnabled , automaticallyAdjustContentInsets , scalesPageToFit , onMessage ,...otherprops } = this.props;
+        let {bounces , onLoadEnd , style , scrollEnabled , automaticallyAdjustContentInsets , scalesPageToFit , onMessage , injectedJavaScript ,...otherprops } = this.props;
         return (
             <Animated.View style={{height:this.state.height,opacity:this._animatedValue}}>
                 <WebView
@@ -115,7 +115,7 @@ class AutoResizeHeightWebView extends React.Component {
                          source={this.state.source}
                          bounces={bounces !== undefined ? bounces : true}
                          javaScriptEnabled
-                         injectedJavaScript={patchPostMessageJsCode}
+                         injectedJavaScript={patchPostMessageJsCode + injectedJavaScript}
                          onLoadEnd={()=>{
                              this.WebViewResetHeightFunctionJSInsert();
                              onLoadEnd !== undefined ? onLoadEnd() : null;
